@@ -1,5 +1,5 @@
 import Layout from "../../components/layout";
-import { getPostData } from "../../lib/posts";
+import { getPostData, getAllPostIds } from "../../lib/posts";
 
 export default function Post({ postData }) {
   return (
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // Fetch necessary data for the blog post using params.id
-  const postData = getPostData(params.id);
+  const postData = await getPostData(params.id);
   return {
     props: {
       postData: postData,
