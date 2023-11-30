@@ -3,12 +3,24 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 
+
+// SSG
 export const getStaticProps = async () => {
   const allPostsData = await getSortedPostsData();
   return {
     props: { allPostsData },
   };
 };
+
+// SSR - Fetching Data at Request Time
+// use the one below instead of getStaticProps
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       // props for your component
+//     },
+//   };
+// }
 
 export default function Home({ allPostsData }) {
   return (
