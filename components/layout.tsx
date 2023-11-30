@@ -5,7 +5,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 
 
-const name = 'Paul';
+const name = 'Paul Shpilsher';
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }) {
@@ -37,7 +37,8 @@ export default function Layout({ children, home }) {
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={`${utilStyles.headingXl} ${utilStyles.noBottom}`}>{name}</h1>
+            <div className={`${utilStyles.lightText} ${utilStyles.noTop}`}>Software Engineer | Digital Nomad</div>
           </>
         ) : (
           <>
